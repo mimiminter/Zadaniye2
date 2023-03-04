@@ -1,0 +1,17 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="150"
+        x:Class="z2.SumPrice"
+        Title="Сумма продаж" Height="200" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="Table1" AutoGenerateColumns="True"/>
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 20 20 20" Content="Сумма продаж" Click="BtnSum_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 110 20 20" Content="Назад" Click="BtnBack_Click" />
+    </Grid>
+</Window>

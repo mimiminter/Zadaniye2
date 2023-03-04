@@ -1,0 +1,57 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="z2.PurchaseWindow"
+        Title="Продажи">
+   <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid SelectionChanged="Table1_SelectionChanged"  Name="Table1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Фамилия клиента" Binding="{Binding IdClientNavigation.Fname}"/>
+                <DataGridTextColumn Header="Имя клиента" Binding="{Binding IdClientNavigation.Mname}"/>
+                <DataGridTextColumn Header="Отчество клиента" Binding="{Binding IdClientNavigation.Lname}"/>
+                <DataGridTextColumn Header="Марка" Binding="{Binding IdProductNavigation.IdMachineMarkNavigation.Mark}"/>
+                <DataGridTextColumn Header="Модель" Binding="{Binding IdProductNavigation.IdModelCarNavigation.Model}"/>
+                <DataGridTextColumn Header="Дата продажи" Binding="{Binding Data}"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding IdProductNavigation.Price}"/>
+                <DataGridTextColumn Header="Тип оплаты" Binding="{Binding IdPaymentTypeNavigation.Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+       <ComboBox Grid.Column="1" Name="comboModel" Height="30" Width="120" Margin="20  -600 300 20">
+           <ComboBox.ItemTemplate>
+               <DataTemplate>
+                   <TextBlock Text="{Binding Mark}"/>
+               </DataTemplate>
+           </ComboBox.ItemTemplate>
+       </ComboBox>
+       <ComboBox Grid.Column="1" Name="comboModel1" Height="30" Width="120" Margin="20  -600 -260 20">
+           <ComboBox.ItemTemplate>
+               <DataTemplate>
+                   <TextBlock Text="{Binding Type}"/>
+               </DataTemplate>
+           </ComboBox.ItemTemplate>
+       </ComboBox>
+       <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 -520 300 20" Content="Найти" Click="BtnSearch_Click"/>
+       <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 -520 -260 20" Content="Найти" Click="BtnSearch1_Click"/>
+       <TextBlock Grid.Column="1" Height="20" Width="30" Text="Код" Margin="20 -650 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Margin="20 -600 20 20" Name="id_tb"/>
+        <TextBlock Grid.Column="1" Height="20" Width="80" Text="    Машина" Margin="20 -500 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="car_tb" Margin="20 -450 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="80" Text="      Клиент" Margin="20 -350 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="client_tb" Margin="20 -300 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="90" Text="  Дата продажи " Margin="20 -200 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="data_tb" Margin="20 -150 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="     Тип оплаты" Margin="20 -50 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="payment_tb" Margin="20 0 20 20" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 650 20 20" Content="Назад" Click="BtnBack_Click" />
+       <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="-300 550 20 20" Content="Добавить" Click="BtnInsert_Click" />
+       <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 20 20" Content="Изменить" Click="BtnUpdate_Click" />
+       <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 -300 20" Content="Удалить" Click="BtnDelete_Click" />
+    </Grid>
+</Window>

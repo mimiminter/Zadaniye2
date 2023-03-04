@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="z2/App.axaml" value="z2/z2.csproj" />
+        <entry key="z2/AutoWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/ClientAutoWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/MainWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/PurchaseWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/SoldAutoWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/SumPrice.axaml" value="z2/z2.csproj" />
+        <entry key="z2/SumWindow.axaml" value="z2/z2.csproj" />
+        <entry key="z2/menuwindow.axaml" value="z2/z2.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

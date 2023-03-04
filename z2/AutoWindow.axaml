@@ -1,0 +1,67 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="z2.AutoWindow"
+        Title="Автомобили">
+     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid SelectionChanged="Table1_SelectionChanged"  Name="Table1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Страна производитель" Binding="{Binding IdManufacturerCountryNavigation.Country}"/>
+                <DataGridTextColumn Header="Марка машины" Binding="{Binding IdMachineMarkNavigation.Mark}"/>
+                <DataGridTextColumn Header="Модель машины" Binding="{Binding IdModelCarNavigation.Model}"/>
+                <DataGridTextColumn Header="Цвет" Binding="{Binding IdColorNavigation.Colors}"/>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="1" Height="20" Width="30" Text="Код" Margin="20 -650 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Margin="20 -600 20 20" Name="id_tb"/>
+        <TextBlock Grid.Column="1" Height="20" Width="130" Text="Страна производитель" Margin="20 -500 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="counry_man_tb" Margin="20 -450 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="90" Text="Марка машины" Margin="20 -350 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="machine_mark_tb" Margin="20 -300 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="95" Text="Модель машины" Margin="20 -200 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="model_tb" Margin="20 -150 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="           Цвет" Margin="20 -50 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="color_tb" Margin="20 0 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="      Количество" Margin="20 100 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="quant_tb" Margin="20 150 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="90" Text="Цена" Margin="20 250 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="price_tb" Margin="20 300 20 20" />
+        <ComboBox Grid.Column="1" Name="comboModel" Height="30" Width="120" Margin="20  -600 300 20">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Model}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Grid.Column="1" Name="comboModel1" Height="30" Width="120" Margin="20  -600 -300 20">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Model}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Click="BtnSearch2_Click" Margin="20 -440 -300 20" Content="Проверить"/>
+        <TextBlock Grid.Column="1" Height="30" Width="120" Name="count_tb" Margin="20 -360 -300 20" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Click="BtnSearch1_Click" Margin="20 -520 300 20" Content="Найти"/>
+        <ComboBox Grid.Column="1" Name="comboMark" Height="30" Width="120" SelectionChanged="SC"  Margin="20 -520 -300 20">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Mark}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 650 20 20" Content="Назад" Click="BtnBack_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="-300 550 20 20" Content="Добавить" Click="BtnInsert_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 20 20" Content="Изменить" Click="BtnUpdate_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 -300 20" Content="Удалить" Click="BtnDelete_Click" />
+    </Grid>
+</Window>

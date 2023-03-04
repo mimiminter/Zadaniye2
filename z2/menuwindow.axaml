@@ -1,0 +1,46 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="450"
+        x:Class="z2.menuwindow"
+        Title="Клиенты">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid SelectionChanged="Table1_SelectionChanged"  Name="Table1" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Fname}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Mname}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Lname}"/>
+                <DataGridTextColumn Header="Серия паспорта" Binding="{Binding PassportSeries}"/>
+                <DataGridTextColumn Header="Номер паспорта" Binding="{Binding PassportNumber}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding HomeAddress}"/>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding NumberPhone}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="1" Height="20" Width="30" Text="Код" Margin="20 -650 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Margin="20 -600 20 20" Name="id_tb"/>
+        <TextBlock Grid.Column="1" Height="20" Width="80" Text="    Фамилия" Margin="20 -500 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="fname_tb" Margin="20 -450 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="80" Text="Имя" Margin="20 -350 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="mname_tb" Margin="20 -300 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="80" Text="Отчество" Margin="20 -200 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="lname_tb" Margin="20 -150 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="Серия паспорта" Margin="20 -50 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="passport_series_tb" Margin="20 0 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="Номер паспорта" Margin="20 100 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="passport_number_tb" Margin="20 150 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="90" Text="Адрес" Margin="20 250 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="adress_tb" Margin="20 300 20 20" />
+        <TextBlock Grid.Column="1" Height="20" Width="100" Text="Номер телефона" Margin="20 400 20 20"/>
+        <TextBox Grid.Column="1" Height="30" Width="120" Name="number_tb" Margin="20 450 20 20" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="-300 550 20 20" Content="Добавить" Click="BtnInsert_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 20 20" Content="Изменить" Click="BtnUpdate_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 550 -300 20" Content="Удалить" Click="BtnDelete_Click" />
+        <Button Grid.Column="1" Background="Green" Height="30" Width="120" Margin="20 650 20 20" Content="Назад" Click="BtnBack_Click" />
+    </Grid>
+</Window>

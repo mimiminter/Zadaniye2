@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="350" d:DesignHeight="250"
+        x:Class="z2.MainWindow"
+        Title="Меню" Height="300" Width="300"  WindowStartupLocation="CenterScreen" VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+    <Grid>
+        <Border  MinWidth="350" MaxWidth="300" Margin="21,162,21,10" VerticalAlignment="Center" HorizontalAlignment="Center"  Padding="30" Height="382">
+            <StackPanel >
+                <Button Content="Список автомобилей" Background="Green" HorizontalAlignment="Center" Margin="20,20,20,0" VerticalAlignment="Center" Height="31" Click="Button_Click_auto" Width="250"/>
+                <Button Content="Клиенты" Margin="20,20,20,20" Background="Green" Click="Button_Click_Clients"  />
+                <Button Content="Покупки" Background="Green"  Click="Button_Click_Purshaches"  Height="31"  Margin="20,0,20,20"/>
+                <Button Content="Сумма продаж" Background="Green"  Click="Button_Click_Sum"  Height="31"  Margin="20,0,20,20"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
